@@ -5,12 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Calculator" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="69*"/>
-            <ColumnDefinition Width="331*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBox 
+            x:Name="Display"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="3" 
+            Text="0"
+            IsReadOnly="True"
+            HorizontalContentAlignment="Right"
+            VerticalContentAlignment="Center"
+            FontSize="32"
+            Margin="10"
+            Padding="10"
+            Height="70"
+            Focusable="False"/>
+        
     </Grid>
 </Window>
