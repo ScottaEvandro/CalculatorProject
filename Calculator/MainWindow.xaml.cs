@@ -19,4 +19,13 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void NumberButton_Click(object sender, RoutedEventArgs e)
+    {
+        Button button = (Button)sender;
+
+        string number = button.Content.ToString()!;
+
+        Display.Text = number;
+    }
 }
