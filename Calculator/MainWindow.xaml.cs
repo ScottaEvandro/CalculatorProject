@@ -26,6 +26,6 @@ public partial class MainWindow : Window
 
         string number = button.Content.ToString()!;
 
-        Display.Text = number;
+        Display.Text = Display.Text == "0" ? number : Display.Text + number;
     }
 }
