@@ -11,6 +11,7 @@ public partial class MainWindow : Window
 {
     private double? firstOperand;
     private char? currentOperator;
+    private bool isEnteringSecondOperand;
     public MainWindow()
     {
         InitializeComponent();
@@ -22,15 +23,24 @@ public partial class MainWindow : Window
 
         string number = button.Content.ToString()!;
 
-        Display.Text = Display.Text == "0" ? number : Display.Text + number;
+        if (isEnteringSecondOperand)
+        {
+            Display.Text = number;
+            isEnteringSecondOperand = false;
+        }
+        else
+        {
+            Display.Text = Display.Text == "0" ? number : Display.Text + number;
+        }
     }
 
     private void OperatorButton_Click(object sender, RoutedEventArgs e)
     {
         Button button = (Button)sender;
         var operatorText = button.Content.ToString();
+
         firstOperand = double.Parse(Display.Text);
-        Display.Text = "0";
         currentOperator = operatorText![0];
+        isEnteringSecondOperand = true;
     }
 }
