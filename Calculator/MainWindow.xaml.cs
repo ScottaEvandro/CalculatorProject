@@ -15,6 +15,7 @@ namespace Calculator;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private double? firstOperand;
     public MainWindow()
     {
         InitializeComponent();
@@ -27,5 +28,11 @@ public partial class MainWindow : Window
         string number = button.Content.ToString()!;
 
         Display.Text = Display.Text == "0" ? number : Display.Text + number;
+    }
+
+    private void OperatorButton_Click(object sender, RoutedEventArgs e)
+    {
+        firstOperand = double.Parse(Display.Text);
+        Display.Text = "0";
     }
 }

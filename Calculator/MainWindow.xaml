@@ -19,13 +19,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <TextBox 
             x:Name="Display"
             Grid.Row="0" 
             Grid.Column="0" 
-            Grid.ColumnSpan="3" 
+            Grid.ColumnSpan="4" 
             Text="0"
             IsReadOnly="True"
             HorizontalContentAlignment="Right"
@@ -150,6 +151,44 @@
             Margin="2"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center" />
+        
+        <!--Operator Buttons-->
+        <Button
+            Content="+"
+            Grid.Row="4"
+            Grid.Column="3"
+            FontSize="24"
+            Margin="2"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="OperatorButton_Click"/>
+        <Button
+            Content="-"
+            Grid.Row="3"
+            Grid.Column="3"
+            FontSize="24"
+            Margin="2"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="OperatorButton_Click"/>
+        <Button
+            Content="*"
+            Grid.Row="2"
+            Grid.Column="3"
+            FontSize="24"
+            Margin="2"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center" 
+            Click="OperatorButton_Click"/>
+        <Button
+            Content="/"
+            Grid.Row="1"
+            Grid.Column="3"
+            FontSize="24"
+            Margin="2"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center" 
+            Click="OperatorButton_Click"/>
 
     </Grid>
 </Window>
