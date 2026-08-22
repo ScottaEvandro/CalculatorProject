@@ -65,7 +65,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center" 
             Click="NumberButton_Click"/>
-
+        
         <!--Botões 4, 5 e 6-->
         <Button
             Content="4"
@@ -150,7 +150,8 @@
             FontSize="24"
             Margin="2"
             HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center" />
+            VerticalContentAlignment="Center"
+            Click="EqualsButton_Click"/>
         
         <!--Operator Buttons-->
         <Button

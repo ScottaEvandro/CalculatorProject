@@ -43,4 +43,14 @@ public partial class MainWindow : Window
         currentOperator = operatorText![0];
         isEnteringSecondOperand = true;
     }
+
+    private void EqualsButton_Click(object sender, RoutedEventArgs e)
+    {
+        var secondOperand = double.Parse(Display.Text);
+
+        if (currentOperator == '+')
+        {
+            Display.Text = (firstOperand + secondOperand).ToString();
+        }
+    }
 }
