@@ -12,6 +12,7 @@ public partial class MainWindow : Window
     private double? firstOperand;
     private char? currentOperator;
     private bool isEnteringSecondOperand;
+    private bool isShowingResult;
     public MainWindow()
     {
         InitializeComponent();
@@ -23,7 +24,12 @@ public partial class MainWindow : Window
 
         string number = button.Content.ToString()!;
 
-        if (isEnteringSecondOperand)
+        if (isShowingResult)
+        {
+            Display.Text = number;
+            isShowingResult = false;
+        }
+        else if (isEnteringSecondOperand)
         {
             Display.Text = number;
             isEnteringSecondOperand = false;
@@ -71,6 +77,6 @@ public partial class MainWindow : Window
                 break;
         }
 
-        isEnteringSecondOperand = false;
+        isShowingResult = true;
     }
 }
