@@ -48,9 +48,29 @@ public partial class MainWindow : Window
     {
         var secondOperand = double.Parse(Display.Text);
 
-        if (currentOperator == '+')
+        switch (currentOperator)
         {
-            Display.Text = (firstOperand + secondOperand).ToString();
+            case '+':
+                Display.Text = (firstOperand + secondOperand).ToString();
+                break;
+            case '-':
+                Display.Text = (firstOperand - secondOperand).ToString();
+                break;
+            case '*':
+                Display.Text = (firstOperand * secondOperand).ToString();
+                break;
+            case '/':
+                if (secondOperand != 0)
+                {
+                    Display.Text = (firstOperand / secondOperand).ToString();
+                }
+                else
+                {
+                    Display.Text = "Error";
+                }
+                break;
         }
+
+        isEnteringSecondOperand = false;
     }
 }
